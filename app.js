@@ -1,13 +1,15 @@
+require('dotenv').config();
 const express = require("express")
 const app = express()
 app.set("view engine" , "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({extended : true}))
+
 const mongodb_URL = process.env.MONGODB_URL;
 const document = require("./model/document")
 const mongoose = require("mongoose")
 
- mongoose.connect(mongodb_URL)
+ mongoose.connect(mongodb_URL )
  .then(() => console.log("it's finlly connected!!🫡🫡🫡🫡"))
  .catch((error => console.log(error)))
 
