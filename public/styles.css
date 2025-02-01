@@ -14,7 +14,7 @@ body{
     top: 0;
     opacity: .25 ;
     transition: opacity 1100ms linear;
-    background-color: #d4263d;
+    background-color: #40d426;
     padding: .5rem .2rem;
     text-align: center;
 }

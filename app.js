@@ -10,7 +10,8 @@ const document = require("./model/document")
 const mongoose = require("mongoose")
 
  mongoose.connect(mongodb_URL )
- .then(() => console.log("it's finlly connected!!🫡🫡🫡🫡"))
+ .then(() => console.log("🔍 MongoDB URI:", process.env.MONGODB_URL)
+)
  .catch((error => console.log(error)))
 
 
