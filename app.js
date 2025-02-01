@@ -3,11 +3,11 @@ const app = express()
 app.set("view engine" , "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({extended : true}))
-
+const mongodb_URL = "mongodb+srv://moh2004salehi:jR145o2L0E94UtnO@cluster0.qcecc.mongodb.net/"
 const document = require("./model/document")
 const mongoose = require("mongoose")
 
- mongoose.connect("mongodb://localhost/latin")
+ mongoose.connect(mongodb_URL)
  .then(() => console.log("it's finlly connected!!🫡🫡🫡🫡"))
  .catch((error => console.log(error)))
 
@@ -39,7 +39,7 @@ app.post('/save' , async (req, res) => {
     }
     catch (e) {
         console.log(code)
-        res.render("new" , { code })
+        res.render("new" , { txt:code})
     }
     
 })
