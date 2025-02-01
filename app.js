@@ -3,7 +3,7 @@ const app = express()
 app.set("view engine" , "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({extended : true}))
-const mongodb_URL = "mongodb+srv://moh2004salehi:jR145o2L0E94UtnO@cluster0.qcecc.mongodb.net/"
+const mongodb_URL = process.env.MONGODB_URL;
 const document = require("./model/document")
 const mongoose = require("mongoose")
 
